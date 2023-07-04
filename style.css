@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.filter-name {
+    padding: 15px;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    border-radius: 3px;
+    text-align: center;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.filter-group {
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+.filter-group:hover {
+    background-color: #443e3e;
+}
+
+body {
+    text-align: center;
+    margin: 0;
+    font-family: "Lato";
+    background-color: #443e3e;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+h1 {
+    margin: 10px 0 0 0;
+    font-size: 2em;
+}
+
+canvas {
+    max-width: 100%;
+    max-height:100% ;
+    padding: 15px;
+}
+.canvas{
+    height: 90%;
+}
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.preview-wrapper {
+    width: 90%;
+    padding: 15px;
+    max-height: calc(100% - 30px);
+}
+
+.wrapper-functions {
+    width: 10%;
+    background-color: #383030af;
+}
+
+.filter-buttons {
+    display: block;
+    margin: 15px 0px;
+}
+
+.filter-buttons button,
+.editor-buttons button {
+    margin: 4px;
+    background: black;
+    border: none;
+    color: white;
+    font-family: "Lato";
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.filter-buttons button.disabled {
+    background: #aaa;
+}
+
+.filter-buttons button {
+    margin: 10px 4px;
+    background: #03a9f4;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: "Lato";
+    padding: 6px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+
+.editor-buttons #reset-btn {
+    background: #03a9f4;
+}
+
+.editor-buttons #download-btn {
+    background: #03a9f4;
+}
+
+.editor-buttons button:hover {
+    background: #795548;
+    cursor: pointer;
+}
+
+.editor-buttons {
+    margin-top: 10px;
+}
+
+[type="file"] {
+    display: none;
+}
+
+[type="file"]+label {
+    margin: 10px 4px;
+    background: #03a9f4;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: "Lato";
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+[type="file"]+label:hover {
+    background: #3399ff;
+}
+
+.range-input {
+    margin: 10px 0;
+    width: 50%;
+    height: 8px;
+    appearance: none;
+    background-color: rgba(#000000, 0.8);
+    border-radius: 16px;
+    outline: none;
+    overflow: hidden;
+}
+
+.range-input::-webkit-slider-thumb {
+    appearance: none;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background-color: #03a9f4;
+    border: none;
+    border-radius: 50%;
+    box-sizing: border-box;
+    cursor: ew-resize;
+    box-shadow: -100vw 0 0 calc(100vw - 16px / 2) #03a9f4;
+}
+
+.wrap-range {
+    display: none;
+}
+
+.wrap-range.active {
+    display: block;
+}
+
+.wrap-range button {
+    padding: 2px 10px;
+    margin: 0;
+    cursor: pointer;
+    background: #03a9f4;
+    border: none;
+    color: white;
+    font-family: "Lato";
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.wrap-range .disabled {
+    background: #03a8f45e;
+}
+
+.subtitle{
+    padding: 0;
+}
+@media (max-width:1068px) {
+    .canvas{
+        max-height: 85%;
+    }
+    canvas{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        justify-content: space-evenly;
+    }
+
+    .preview-wrapper,
+    .wrapper-functions {
+        width: 100%;
+
+        padding: 0;
+        background-color: transparent;
+    }
+    .preview-wrapper{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .filter-group {
+        width: 20%;
+        background-color: #383030af;
+    }
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        flex-grow: 4;
+    }
+}
+@media (max-width:520px){
+    .filter-name{
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+}

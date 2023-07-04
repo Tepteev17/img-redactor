@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Image Redactor</title>
+  </head>
+  <body>
+    <main>
+      <div class="preview-wrapper">
+        <div class="canvas"><canvas id="canvas"></canvas></div>
+
+        <div class="wrap-range blur">
+            <span span class="filter-name gamma subtitle">Blur</span>
+            <div class="wrapper">
+              <button id="blur-dec" class="disabled">-</button>
+              <input type="range" class="range-input blur" disabled>
+              <button id="blur-inc">+</button>
+            </div>
+        </div>
+        <div class="wrap-range brightness">
+          <span span class="filter-name gamma subtitle">Brightness</span>
+            <button id="brightness-dec">-</button>
+            <input type="range" class="range-input brightness"  disabled>
+            <button id="brightness-inc">+</button>
+        </div>
+        <div class="wrap-range contrast">
+            <span span class="filter-name gamma subtitle">Contrast</span>
+            <button id="contrast-dec">-</button>
+            <input type="range" class="range-input contrast"  disabled>
+            <button id="contrast-inc">+</button>
+        </div>
+        <div class="wrap-range saturation">
+          <span span class="filter-name gamma subtitle">Saturation</span>
+          <button id="saturation-dec">-</button>
+          <input type="range" class="range-input saturation"  disabled>
+          <button id="saturation-inc">+</button>
+        </div>
+        <div class="wrap-range noise">
+          <span span class="filter-name gamma subtitle">Noise</span>
+          <button id="noise-dec" class="disabled">-</button>
+          <input type="range" class="range-input noise"  disabled>
+          <button id="noise-inc">+</button>
+        </div>
+        <div class="wrap-range gamma">
+          <span span class="filter-name gamma subtitle">Gamma</span>
+          <button id="gamma-dec" class="disabled ">-</button>
+          <input type="range" class="range-input gamma"  disabled>
+          <button id="gamma-inc">+</button>
+        </div>
+        <div class="wrap-range sharpen">
+          <span span class="filter-name gamma subtitle">Sharpen</span>
+          <button id="sharpen-dec" class="disabled">-</button>
+          <input type="range" class="range-input sharpen" disabled>
+          <button id="sharpen-inc">+</button>
+        </div>
+        <div class="wrap-range sepia">
+          <span span class="filter-name gamma subtitle">Sepia</span>
+          <button id="sepia-dec" class="disabled">-</button>
+          <input type="range" class="range-input sepia"  disabled>
+          <button id="sepia-inc">+</button>
+        </div>
+
+        
+      </div>
+      <div class="wrapper-functions">
+        <div class="filter-buttons">
+          <div class="filter-group">
+            <span class="filter-name brightness">Brightness</span>
+          </div>
+          <div class="filter-group">
+            <span class="filter-name contrast">Contrast</span>
+          </div>
+          <div class="filter-group">
+            <span class="filter-name saturation">Saturation</span>
+          </div>
+          <div class="filter-group">
+            <span class="filter-name noise">Noise</span>
+          </div>
+          <div class="filter-group">
+            <span class="filter-name sharpen">Sharpen</span>
+          </div>
+          <div class="filter-group">
+            <span class="filter-name sepia">Sepia</span>
+          </div>
+          <div class="filter-group">
+            <span class="filter-name blur">Blur</span>
+          </div>
+          <div class="filter-group">
+            <span class="filter-name gamma">Gamma</span>
+          </div>
+        <div class="editor-buttons">
+          <input type="file" id="upload-file" placeholder="Upload a Picture" />
+          <label for="upload-file">Upload a Picture</label>
+          <button id="download-btn">Download Image</button>
+          <button id="download-btn" class="reset">reset Image</button>
+          <br />
+        </div>
+      </div>
+      </div>
+    </main>
+    <script type="text/javascript" src="caman.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
