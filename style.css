@@ -40,12 +40,20 @@ h1 {
 }
 
 canvas {
+    position: absolute;
     max-width: 100%;
-    max-height:100% ;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 15px;
+    
 }
 .canvas{
+    position: relative;
+    margin: 15px;
     height: 90%;
+    border: #03a8f4b0 3px dashed;
 }
 main {
     height: 100vh;
@@ -189,11 +197,16 @@ main {
 }
 @media (max-width:1068px) {
     .canvas{
+        position: relative;
         max-height: 85%;
     }
     canvas{
+        position: relative;
         max-width: 100%;
         max-height: 100%;
+        top: 0;
+        left: 0;
+        transform: translate(0%,0%);
     }
     main {
         display: flex;

@@ -3,7 +3,7 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var fileName = "";
 let onLoadImage = false
-const params = {
+let params = {
   brightness: 0,
   contrast: 0,
   saturation: 0,
@@ -154,7 +154,7 @@ $(document).ready(function () {
 
   $("#blur-inc").on("click", function (e) {
     params.blur+=5
-    setRangeInput(100, -100, params.blur, 5, "blur")
+    setRangeInput(100, 0, params.blur, 5, "blur")
     Caman("#canvas", img, function () {
       this.stackBlur(5).render();
     });
@@ -163,7 +163,7 @@ $(document).ready(function () {
   $("#blur-dec").on("click", function (e) {
     Caman("#canvas", img, function () {
       params.blur-=10
-      setRangeInput(100, -100, params.blur, 10, "blur")
+      setRangeInput(100, 0, params.blur, 10, "blur")
       Caman("#canvas", img, function () {
         this.stackBlur(0).render(); 
       });
@@ -172,10 +172,10 @@ $(document).ready(function () {
 
 
   $("#gamma-inc").on("click", function (e) {
-    params.gamma+=0.1
-    setRangeInput(1, 0, params.gamma, 0.01, "gamma")
+    params.gamma+=1
+    setRangeInput(10, 0, params.gamma, 1, "gamma")
     Caman("#canvas", img, function () {
-      this.gamma(0.01).render();
+      this.gamma(1).render();
     });
   });
 
@@ -287,6 +287,17 @@ $(".reset").on("click", function () {
         canvas.height = img.height;
         ctx.drawImage(img, 0, 0, img.width, img.height);
         $("#canvas").removeAttr("data-caman-id");
+        params = {
+          brightness: 0,
+          contrast: 0,
+          saturation: 0,
+          noise:0,
+          sharpen:0,
+          sepia:0,
+          blur: 0,
+          gamma: 0,
+          
+        };
       };
     },
     false
